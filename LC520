@@ -1,0 +1,40 @@
+func detectCapitalUse(word string) bool {
+    r:=[]rune(word)
+    if isCaps(r[0]) {
+        if len(r)==1 {
+            return true
+        }
+        if isCaps(r[1]){
+            return Caps(r[2:])
+        }else{
+            return smallCaps(r[2:])
+        }
+    }else{
+        return smallCaps(r[1:])
+    }
+}
+
+func Caps(s []rune) bool {
+    for _,v := range s {
+        if v<65 || v>90 {    
+            return false
+        }
+    }
+    return true
+}
+
+func smallCaps(s []rune) bool {
+    for _,v := range s {
+        if v<97 || v>122 {
+          return false
+        }
+    }
+    return true
+}
+
+func isCaps(r rune) bool {
+    if r <= 90 && r>=65 {
+        return true
+    }
+    return false
+}
