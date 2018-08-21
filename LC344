@@ -1,0 +1,8 @@
+func reverseString(s string) string {
+    r:=[]rune(s)
+    n:=len(r)
+    for i:=0;i<n/2;i++{
+        r[i],r[n-i-1]=r[n-i-1],r[i]
+    }
+    return string(r)
+}
