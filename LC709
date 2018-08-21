@@ -1,0 +1,11 @@
+func toLowerCase(str string) string {
+    s:=""
+    for _,v := range str {
+        if v <= 90 && v>=65 {
+            s+=string(v+32)
+        }else{
+            s+=string(v)
+        }
+    }
+    return s
+}
