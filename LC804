@@ -1,0 +1,13 @@
+func uniqueMorseRepresentations(words []string) int {
+    morsecodes:=[]string{".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."}
+    m:=make(map[string]int,0)
+    
+    for i:=0;i<len(words);i++{
+        str:=""
+        for _,v := range words[i]{
+            str+=morsecodes[int(v)-97]
+        }
+        m[str]++
+    }
+    return len(m)
+}
