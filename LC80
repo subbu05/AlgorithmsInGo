@@ -1,0 +1,10 @@
+func removeDuplicates(nums []int) int {
+    i:=0
+    for _,k := range nums {
+        if i<2||k >nums[i-2]{
+            nums[i]=k
+            i++
+        }
+    }
+    return i
+}
