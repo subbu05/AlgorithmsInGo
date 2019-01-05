@@ -1,11 +1,9 @@
 func toLowerCase(str string) string {
-    s:=""
-    for _,v := range str {
-        if v <= 90 && v>=65 {
-            s+=string(v+32)
-        }else{
-            s+=string(v)
+    r:=[]rune(str)
+    for i:=0;i<len(r);i++{
+        if r[i]<=90&&r[i]>=65{
+            r[i]+=32
         }
     }
-    return s
+    return string(r)
 }
